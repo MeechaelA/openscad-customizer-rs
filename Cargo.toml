@@ -12,6 +12,7 @@ keywords = ["OpenSCAD", "CAD", "3D"]
 exclude = [
     "data/*",
     "Cargo.lock"
+    "target/*"
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
