@@ -5,8 +5,8 @@ edition = "2021"
 license = "MIT"
 authors = ["Michael Angeles"]
 description = "An interface to the OpenSCAD Customizer."
-readme = "https://github.com/MeechaelA/openscad-customizer-rs/blob/0.1.0/ReadMe.md"
-repository = "https://github.com/MeechaelA/openscad-customizer-rs/tree/0.1.0"
+readme = "https://github.com/MeechaelA/openscad-customizer-rs/blob/main/ReadMe.md"
+repository = "https://github.com/MeechaelA/openscad-customizer-rs"
 keywords = ["OpenSCAD", "CAD", "Computer Aided Design", "3D"]
 
 exclude = [
