@@ -1,15 +1,24 @@
-use std::collections::HashMap;
+use serde::{Serialize, Deserialize};
+use serde_json::{Value, Map, Number};
 
-struct ParameterSets{
-    sets: HashMap<String, ParameterSet>
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct ParameterSets{
+    sets: Map<String, Value>,
+    version: FileFormatVersion
 }
 
-struct ParameterSet<T>{
+
+#[derive(Serialize, Deserialize, Debug, Default)]
+struct ParameterSet{
     name: String,
-    key_values: HashMap<String, T>
+    key_values: Map<String, Value>
 }
 
+#[derive(Serialize, Deserialize, Debug, Default)]
+struct FileFormatVersion{
+    version: String
+}
 
-struct Version{
+enum ParameterType{
 
 }
