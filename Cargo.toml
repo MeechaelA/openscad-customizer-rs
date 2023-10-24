@@ -11,7 +11,7 @@ keywords = ["OpenSCAD", "CAD", "3D"]
 
 exclude = [
     "data/*",
-    "Cargo.lock"
+    "Cargo.lock",
     "target/*"
 ]
 
