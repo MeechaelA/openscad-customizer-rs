@@ -1,0 +1,24 @@
+{
+    "parameterSets":
+    {
+        "FirstSet": {
+            "Labeled_values": "13",
+            "Numbers": "18",
+            "Spinbox": "35",
+            "Vector": "[2, 34, 45, 12, 23, 56]",
+            "slider": "2",
+            "stepSlider": "12",
+            "string": "he"
+        },
+        "SecondSet": {
+            "Labeled_values": "10",
+            "Numbers": "8",
+            "Spinbox": "5",
+            "Vector": "[12, 34, 45, 12, 23, 56]",
+            "slider": "12",
+            "stepSlider": "2",
+            "string": "hello"
+        }
+    },
+    "fileFormatVersion": "1"
+}
