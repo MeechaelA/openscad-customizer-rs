@@ -1,7 +1,6 @@
 
 use serde::{Serialize, Deserialize};
 use serde_json::{Value, Map};
-use std::error::Error;
 use std::vec::Vec;
 
 // Std 
@@ -31,9 +30,9 @@ impl ParameterSets{
 
     pub fn from_file_path(path: String)->Result<ParameterSets, String>{
         let data = File::open(path);
-        let mut error = String::new();
 
         match data{
+
             Ok(stream)=>{
                 let mut buf_reader = BufReader::new(stream);
                 let mut contents = String::new();
@@ -50,18 +49,18 @@ impl ParameterSets{
                                     return Ok(values);
                                 }
                                 Err(_)=>{
-                                    error = String::from("Unable to Deserialize");
+                                    let error = String::from("Unable to Deserialize");
                                     return Err(error);
                                 }
                             }
                         }
                         else{
-                            error = String::from("Unable to Deserialize");
+                            let error = String::from("Unable to Deserialize");
                             return Err(error);
                         }                 
                     }
                     Err(error_contents)=>{
-                        error = error_contents.to_string();
+                        let error = error_contents.to_string();
                         return Err(error);
                     }
                 }   
