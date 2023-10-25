@@ -3,10 +3,8 @@
 use std::fs::File;
 use std::io::{Read, BufReader};
 
-use serde::de::Error;
-
 // Self
-use crate::{ParameterSets};
+use crate::ParameterSets;
 
 #[test]
 fn change_map(){
@@ -23,7 +21,7 @@ fn change_map(){
                 Ok(contents_length)=>{
                     if contents_length > 0{
                         println!("Contents: {:?}", contents);
-                        let mut deserialized: Result<ParameterSets, _> = serde_json::from_str(&contents);
+                        let deserialized: Result<ParameterSets, _> = serde_json::from_str(&contents);
                         match deserialized{
                             Ok(mut values)=>{
                                 println!("Deserialized: {:?}", values);
