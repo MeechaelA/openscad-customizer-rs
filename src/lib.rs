@@ -85,7 +85,8 @@ impl ParameterSets{
         self.parameter_sets = map_tranlsation;
     }
     
-    pub fn get_parameter_set(&self, key: String)->Result<&ParameterSet, String>{
+    // I think this is broken...
+    pub fn get_parameter_set(&self, key: String)->Result<ParameterSet, String>{
         let key_values = self.parameter_sets.get(&key);
         let mut error = Err(String::from("Error..."));
         match key_values{
@@ -93,19 +94,8 @@ impl ParameterSets{
                 let value = map.as_object();
                 match value{
                     Some(map_value)=>{
-                        let mut sets = vec![];
-                        for value in map_value{
-                            let key_values = value.1.as_object();
-                            match key_values{
-                                Some(key_value_map)=>{
-                                    let set = ParameterSet::new(value.0.to_string(), key_value_map.clone()); 
-                                    sets.push(set);
-                                }
-                                None=>{
-                                    error = Err(String::from("Errors with parameter map."))
-                                }
-                            }
-                        }
+                        let set = ParameterSet::new(key, map_value.clone());
+                        return Ok(set);
                     }
                     None=>{
                         error = Err(String::from("Parameter set has no values."));
