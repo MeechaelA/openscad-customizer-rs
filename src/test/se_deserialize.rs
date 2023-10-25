@@ -87,8 +87,8 @@ fn deserialize_format(){
         }
     }
 }
-#[test]
 
+#[test]
 fn serialize_format(){
 
     let data = File::open("data/format.json");
